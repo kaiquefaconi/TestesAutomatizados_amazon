@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.12.7 on win32)" generated="2024-10-09T17:01:33.380546" rpa="false" schemaversion="5">
+<suite id="s1" name="Amazon Teste" source="c:\Users\LowCost\Documents\TestesAutomatizados_amazon\testes\amazon_teste.robot">
+<test id="s1-t1" name="Processo completo de pesquisa e compra de diversos itens no site da Amazon" line="14">
+<kw name="Dado que eu acesse a Amazon" owner="setup_teardown" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-10-09T17:01:34.053727" level="INFO">Opening browser 'Edge' to base url 'https://www.amazon.com.br/?tag=msndesktopabk-20&amp;ref=pd_sl_7to86bd2ph_e&amp;adgrpid=1141293728081284&amp;hvadid=71331024009172&amp;hvnetw=o&amp;hvqmt=e&amp;hvbmt=be&amp;hvdev=c&amp;hvlocint=&amp;hvlocphy=116068&amp;hvtargid=kwd-71331371436168:loc-20&amp;hydadcr=26346_11690411'.</msg>
+<arg>url=https://www.amazon.com.br/?tag=msndesktopabk-20&amp;ref=pd_sl_7to86bd2ph_e&amp;adgrpid=1141293728081284&amp;hvadid=71331024009172&amp;hvnetw=o&amp;hvqmt=e&amp;hvbmt=be&amp;hvdev=c&amp;hvlocint=&amp;hvlocphy=116068&amp;hvtargid=kwd-71331371436168:loc-20&amp;hydadcr=26346_11690411</arg>
+<arg>browser=Edge</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-10-09T17:01:34.053727" elapsed="8.725898"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-10-09T17:01:42.780724" elapsed="0.107632"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2024-10-09T17:01:42.896427" level="INFO">Executing JavaScript:
+document.body.style.zoom = "0.8"
+Without any arguments.</msg>
+<arg>document.body.style.zoom = "0.8"</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2024-10-09T17:01:42.895511" elapsed="0.170705"/>
+</kw>
+<status status="PASS" start="2024-10-09T17:01:34.053727" elapsed="9.012489"/>
+</kw>
+<kw name="Quando acessar o menu de &quot;Venda na Amazon&quot;" owner="amazon_resource">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-09T17:01:43.070780" level="INFO">Clicking element '//a[@href='/gp/bestsellers/?ref_=nav_cs_bestsellers'][contains(.,'Mais Vendidos')]'.</msg>
+<arg>${Mais-vendidos}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T17:01:43.069280" elapsed="5.855983"/>
+</kw>
+<status status="PASS" start="2024-10-09T17:01:43.068281" elapsed="5.858025"/>
+</kw>
+<kw name="E deverá escolher os produtos eletronicos" owner="amazon_resource">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-09T17:01:48.930716" level="INFO">Clicking element '//a[@href='/gp/bestsellers/electronics/ref=zg_bs_nav_electronics_0'][contains(.,'Eletrônicos')]'.</msg>
+<arg>${Eletronicos}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T17:01:48.929819" elapsed="4.145692"/>
+</kw>
+<status status="PASS" start="2024-10-09T17:01:48.927437" elapsed="4.148074"/>
+</kw>
+<kw name="Então deverá escolher o primeiro produto da página" owner="amazon_resource">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-09T17:01:53.079176" level="INFO">Clicking element '(//div[contains(@class,'a-section a-spacing-mini _cDEzb_noop_3Xbw5')])[1]'.</msg>
+<arg>${Produto}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T17:01:53.079176" elapsed="52.904053"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-09T17:02:47.983584" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-09T17:02:45.983229" elapsed="2.000876"/>
+</kw>
+<status status="PASS" start="2024-10-09T17:01:53.078442" elapsed="54.905663"/>
+</kw>
+<kw name="E deverá selecionar a opção de sem oferta adicional" owner="amazon_resource">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-09T17:02:47.988507" level="INFO">Clicking element '//div[contains(@aria-expanded,'false')]'.</msg>
+<arg>${Sem-oferta}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T17:02:47.987766" elapsed="0.331948"/>
+</kw>
+<status status="PASS" start="2024-10-09T17:02:47.984105" elapsed="0.336857"/>
+</kw>
+<kw name="E deverá selecionar a opção de &quot;adicionar ao carrinho&quot;" owner="amazon_resource">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-09T17:02:48.322777" level="INFO">Clicking element '//input[contains(@name,'submit.add-to-cart')]'.</msg>
+<arg>${Carrinho-adicionar}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T17:02:48.322777" elapsed="0.510299"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-09T17:02:50.833328" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-09T17:02:48.833076" elapsed="2.000252"/>
+</kw>
+<status status="PASS" start="2024-10-09T17:02:48.322777" elapsed="2.510551"/>
+</kw>
+<kw name="E deverá fechar a oferta adicional" owner="amazon_resource">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-09T17:02:50.833328" level="INFO">Clicking element '//button[contains(@data-action,'a-popover-close')]'.</msg>
+<arg>${Recusa-oferta-adicional}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T17:02:50.833328" elapsed="1.256175"/>
+</kw>
+<status status="PASS" start="2024-10-09T17:02:50.833328" elapsed="1.256175"/>
+</kw>
+<kw name="Quando acessar o menu de &quot;Venda na Amazon&quot;" owner="amazon_resource">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-09T17:02:52.092570" level="INFO">Clicking element '//a[@href='/gp/bestsellers/?ref_=nav_cs_bestsellers'][contains(.,'Mais Vendidos')]'.</msg>
+<arg>${Mais-vendidos}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T17:02:52.092570" elapsed="1.276187"/>
+</kw>
+<status status="PASS" start="2024-10-09T17:02:52.092570" elapsed="1.276864"/>
+</kw>
+<kw name="E deverá escolher os produtos de cozinha" owner="amazon_resource">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-09T17:02:53.374632" level="INFO">Clicking element '//a[contains(.,'Cozinha')]'.</msg>
+<arg>${Cozinha}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T17:02:53.372967" elapsed="4.647584"/>
+</kw>
+<status status="PASS" start="2024-10-09T17:02:53.371722" elapsed="4.649331"/>
+</kw>
+<kw name="Então deverá escolher o primeiro produto da página cozinha" owner="amazon_resource">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-09T17:02:58.024466" level="INFO">Clicking element '(//div[contains(@class,'_cDEzb_iveVideoWrapper_JJ34T has-ive-video')])[1]'.</msg>
+<arg>${Produto-cozinha}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T17:02:58.024150" elapsed="4.821075"/>
+</kw>
+<status status="PASS" start="2024-10-09T17:02:58.022970" elapsed="4.823596"/>
+</kw>
+<kw name="E deverá selecionar a opção de sem oferta adicional" owner="amazon_resource">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-09T17:03:02.849902" level="INFO">Clicking element '//div[contains(@aria-expanded,'false')]'.</msg>
+<arg>${Sem-oferta}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T17:03:02.849124" elapsed="0.375746"/>
+</kw>
+<status status="PASS" start="2024-10-09T17:03:02.846566" elapsed="0.378304"/>
+</kw>
+<kw name="E deverá selecionar a opção de &quot;adicionar ao carrinho&quot;" owner="amazon_resource">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-09T17:03:03.224870" level="INFO">Clicking element '//input[contains(@name,'submit.add-to-cart')]'.</msg>
+<arg>${Carrinho-adicionar}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T17:03:03.224870" elapsed="2.468876"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-09T17:03:07.694056" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-09T17:03:05.693746" elapsed="2.000310"/>
+</kw>
+<status status="PASS" start="2024-10-09T17:03:03.224870" elapsed="4.469186"/>
+</kw>
+<kw name="Quando acessar o menu de &quot;Venda na Amazon&quot;" owner="amazon_resource">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-09T17:03:07.694056" level="INFO">Clicking element '//a[@href='/gp/bestsellers/?ref_=nav_cs_bestsellers'][contains(.,'Mais Vendidos')]'.</msg>
+<arg>${Mais-vendidos}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T17:03:07.694056" elapsed="1.141751"/>
+</kw>
+<status status="PASS" start="2024-10-09T17:03:07.694056" elapsed="1.141751"/>
+</kw>
+<kw name="E deverá escolher os produtos de casa" owner="amazon_resource">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-09T17:03:08.840572" level="INFO">Clicking element '//a[@href='/gp/bestsellers/home/ref=zg_bs_nav_home_0'][contains(.,'Casa')]'.</msg>
+<arg>${Casa}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T17:03:08.839539" elapsed="4.518785"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-09T17:03:14.358759" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-09T17:03:13.358324" elapsed="1.000435"/>
+</kw>
+<status status="PASS" start="2024-10-09T17:03:08.838320" elapsed="5.520439"/>
+</kw>
+<kw name="E deverá escolher o primeiro produto da aba casa" owner="amazon_resource">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-09T17:03:14.358759" level="INFO">Clicking element '(//div[contains(@id,'gridItemRoot')])[1]'.</msg>
+<arg>${Produto-casa}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T17:03:14.358759" elapsed="2.901334"/>
+</kw>
+<status status="PASS" start="2024-10-09T17:03:14.358759" elapsed="2.901334"/>
+</kw>
+<kw name="E deverá selecionar a opção de sem oferta adicional" owner="amazon_resource">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-09T17:03:17.260093" level="INFO">Clicking element '//div[contains(@aria-expanded,'false')]'.</msg>
+<arg>${Sem-oferta}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T17:03:17.260093" elapsed="0.315652"/>
+</kw>
+<status status="PASS" start="2024-10-09T17:03:17.260093" elapsed="0.317598"/>
+</kw>
+<kw name="E deverá selecionar a opção de &quot;adicionar ao carrinho&quot;" owner="amazon_resource">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-09T17:03:17.581284" level="INFO">Clicking element '//input[contains(@name,'submit.add-to-cart')]'.</msg>
+<arg>${Carrinho-adicionar}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T17:03:17.580206" elapsed="2.046260"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-09T17:03:21.627067" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-09T17:03:19.626466" elapsed="2.000601"/>
+</kw>
+<status status="PASS" start="2024-10-09T17:03:17.579455" elapsed="4.047612"/>
+</kw>
+<kw name="Fechar o navegador" owner="setup_teardown" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-10-09T17:03:21.627067" elapsed="2.359759"/>
+</kw>
+<status status="PASS" start="2024-10-09T17:03:21.627067" elapsed="2.359759"/>
+</kw>
+<status status="PASS" start="2024-10-09T17:01:34.048828" elapsed="109.937998"/>
+</test>
+<status status="PASS" start="2024-10-09T17:01:33.388621" elapsed="110.598205"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Amazon Teste">Amazon Teste</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-10-09T17:01:34.031013" level="ERROR">Error in file 'c:\Users\LowCost\Documents\TestesAutomatizados_amazon\pages\amazon_resource.robot' on line 3: Setting 'Test Setup' is not allowed in resource file.</msg>
+<msg time="2024-10-09T17:01:34.031013" level="ERROR">Error in file 'c:\Users\LowCost\Documents\TestesAutomatizados_amazon\pages\amazon_resource.robot' on line 4: Setting 'Test Teardown' is not allowed in resource file.</msg>
+</errors>
+</robot>
